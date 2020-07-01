@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Manager</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<div class="container row">
+    <div class="col s3"></div>
+    <div class="col s6">
+        <form th:action="@{employee-save}" method="post" th:object="${employee}">
+            <input placeholder="Name" required type="text" th:field="*{name}">
+            <input placeholder="Wage" required type="number" th:field="*{wage}">
+            <button class="waves-effect waves-light btn black">Add</button>
+        </form>
+        <hr>
+        <a class="waves-effect waves-light btn black" href="/">Return</a>
+    </div>
+</div>
+
+</body>
+</html>
