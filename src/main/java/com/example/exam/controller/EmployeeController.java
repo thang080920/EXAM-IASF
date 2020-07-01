@@ -27,14 +27,14 @@ public class EmployeeController {
         return (List<Employee>) employeeRepository.findAll();
     }
 
-    @GetMapping("/employee-add")
+    @GetMapping("/add")
     public String addEmployee(Model model) {
         model.addAttribute("employee", new Employee());
 
         return "employee-add";
     }
 
-    @PostMapping("/employee-save")
+    @PostMapping("/save")
     public String saveEmployee(Employee employee) {
         createEmployee(employee);
 
